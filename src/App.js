@@ -52,8 +52,9 @@ class App extends Component {
         { this.state.modal4 &&
           <AlertModal
             onClose={() => this.toggleModal('modal4')}
+            heading="Hello pal"
             message="Please click this here button"
-            confirmLabel="Fuck yeah OK"
+            confirmLabel="Whatevs"
           />
         }
 
