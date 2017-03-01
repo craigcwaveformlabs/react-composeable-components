@@ -30,3 +30,12 @@
   right: -1em;
 }
 
+.c-modal__footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: fuchsia;
+  padding: .5em;
+}
+

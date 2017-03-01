@@ -4,13 +4,13 @@ import ModalClose from './ModalClose';
 
 import './Modal.css';
 
-const Modal = ({ closeable, onClose, width }) => {
+const Modal = ({ closeable, onClose, width, children }) => {
   const containerClass = `c-modal__container c-modal__container--${width}`;
   return (
     <div className="c-modal">
       <div className={containerClass}>
-        Children go here
-        { closeable &&
+        {children}
+        {closeable &&
           <ModalClose onClose={onClose} />
         }
       </div>

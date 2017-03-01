@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Modal from './components/Modal';
+import Modal from './components/Modal/Modal';
+import AlertModal from './components/Modal/AlertModal';
 import './App.css';
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
           <li>Basic modal <button onClick={() => this.toggleModal('modal1')}>Launch</button></li>
           <li>Closable modal <button onClick={() => this.toggleModal('modal2')}>Launch</button></li>
           <li>Narrow modal <button onClick={() => this.toggleModal('modal3')}>Launch</button></li>
+          <li>Alert modal <button onClick={() => this.toggleModal('modal4')}>Launch</button></li>
         </ul>
 
         { this.state.modal1 &&
@@ -44,6 +46,14 @@ class App extends Component {
           <Modal
             onClose={() => this.toggleModal('modal3')}
             width="narrow"
+          />
+        }
+
+        { this.state.modal4 &&
+          <AlertModal
+            onClose={() => this.toggleModal('modal4')}
+            message="Please click this here button"
+            confirmLabel="Fuck yeah OK"
           />
         }
 
