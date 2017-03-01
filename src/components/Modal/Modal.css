@@ -15,8 +15,13 @@
 .c-modal__container {
   background-color: white;
   min-height: 32em;
-  min-width: 32.6em;
+  width: 100%;
+  max-width: 32.6em;
   position: relative;
+}
+
+.c-modal__container--narrow {
+  max-width: 16em;
 }
 
 .c-modal__close {
@@ -24,3 +29,4 @@
   top: 0;
   right: -1em;
 }
+

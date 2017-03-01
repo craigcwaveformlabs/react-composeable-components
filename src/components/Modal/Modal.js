@@ -1,23 +1,32 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-import ModalContainer from './ModalContainer';
+import ModalClose from './ModalClose';
 
 import './Modal.css';
 
-class Modal extends Component {
-  render() {
-    return (
-      <div className="c-modal">
-        <ModalContainer onClose={this.props.onClose}>
-
-        </ModalContainer>
+const Modal = ({ closeable, onClose, width }) => {
+  const containerClass = `c-modal__container c-modal__container--${width}`;
+  return (
+    <div className="c-modal">
+      <div className={containerClass}>
+        Children go here
+        { closeable &&
+          <ModalClose onClose={onClose} />
+        }
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 Modal.propTypes = {
-  onClose: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
+  closeable: PropTypes.bool,
+  width: PropTypes.oneOf(['narrow', 'wide']),
 }
+
+Modal.defaultProps = {
+  closeable: false,
+  width: 'wide'
+};
 
 export default Modal;
